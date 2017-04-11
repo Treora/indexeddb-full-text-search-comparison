@@ -1,0 +1,30 @@
+<meta charset="utf-8" />
+
+<script src="enwiki-articles.js" /></script>
+<script src="testQueries.js" /></script>
+<script src="tests.js"></script>
+<script>
+
+const timers = {}
+const time = m => {
+    log(`starting ${m}`)
+    timers[m] = Date.now()
+}
+const timeEnd = m => {
+    log(`finished ${m} in ${Date.now() - timers[m]} ms`)
+    delete timers[m]
+}
+
+const log = m => document.getElementById('log').innerText += `\n> ${m}`
+const fail = log
+
+const INDEX_START = 0
+const INDEX_END = 300
+
+
+</script>
+
+<button onClick="levi.index()">Index levi</button>
+<button onClick="levi.testSearch()">Search levi</button>
+
+<pre id="log">output log:</pre>
